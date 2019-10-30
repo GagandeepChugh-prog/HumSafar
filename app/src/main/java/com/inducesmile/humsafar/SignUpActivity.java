@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText email,password,confirmPassword, phoneNumber;
+    EditText email,password,confirmPassword, phoneNumber,sid;
     Button signUp;
     private FirebaseAuth mAuth;
     private  FirebaseAuth.AuthStateListener firebaseAuthListener;
@@ -47,6 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
         confirmPassword=findViewById(R.id.confirmPassword);
         phoneNumber=findViewById(R.id.phoneNumber);
+        sid=findViewById(R.id.sid);
         signUp=findViewById(R.id.signUp);
 
 
@@ -57,6 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
                 final String Password=password.getText().toString();
                 final String ConfirmPassword=confirmPassword.getText().toString();
                 final String PhoneNumber=phoneNumber.getText().toString();
+                final String SID=sid.getText().toString();
                 if(!Password.equals(ConfirmPassword)){
                     Toast.makeText(getApplicationContext(),"Password does not match",Toast.LENGTH_LONG).show();
                 }
@@ -77,6 +79,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 currentuser2.setValue(Password);
                                 DatabaseReference currentuser3=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("PhoneNumber");
                                 currentuser3.setValue(PhoneNumber);
+                                DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("StudentIdentityNumber");
+                                currentuser4.setValue(SID);
 
 
                             }

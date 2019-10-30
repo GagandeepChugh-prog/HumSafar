@@ -27,9 +27,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="474dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="523dp"
         android:text="Sign Up" />
 
     <EditText
@@ -41,9 +41,23 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="378dp"
+        android:layout_marginTop="338dp"
         android:ems="10"
         android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/sid"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="419dp"
+        android:ems="8"
+        android:hint="Student Identity Number"
         android:inputType="phone" />
 
     <EditText
@@ -57,7 +71,7 @@
 
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="247dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword" />
@@ -71,7 +85,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="163dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
