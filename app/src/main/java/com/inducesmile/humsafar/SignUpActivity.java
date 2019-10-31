@@ -1,10 +1,13 @@
 package com.inducesmile.humsafar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.FocusFinder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,13 +20,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class SignUpActivity extends AppCompatActivity {
 
     EditText email,password,confirmPassword, phoneNumber,sid;
     Button signUp;
     private FirebaseAuth mAuth;
-    private  FirebaseAuth.AuthStateListener firebaseAuthListener;
+    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,8 @@ public class SignUpActivity extends AppCompatActivity {
         phoneNumber=findViewById(R.id.phoneNumber);
         sid=findViewById(R.id.sid);
         signUp=findViewById(R.id.signUp);
+
+
 
 
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +98,11 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
+
+
 
     @Override
     protected void onStart() {
