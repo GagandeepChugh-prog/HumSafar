@@ -89,6 +89,11 @@ public class SignUpActivity extends AppCompatActivity {
                                 currentuser3.setValue(PhoneNumber);
                                 DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("StudentIdentityNumber");
                                 currentuser4.setValue(SID);
+                                DatabaseReference currentuser5=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentDriver");
+                                currentuser5.setValue("False");
+                                DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentRider");
+                                currentuser6.setValue("False");
+
 
 
                             }
