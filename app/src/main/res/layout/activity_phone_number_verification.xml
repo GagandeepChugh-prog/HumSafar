@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bbg"
+    tools:context=".PhoneNumberVerification">
+
+    <Button
+        android:id="@+id/chooseToUpload"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginTop="494dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Choose Image to Upload"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="265dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="210dp"
+        android:text="Please upload your student identity card image to complete sign up."
+        android:textColor="#EE030303"
+        android:textStyle="bold"
+        app:fontFamily="@font/adamina" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="19dp"
+        android:text="Upload Student Identity"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        android:textStyle="normal|bold"
+        app:fontFamily="@font/adamina" />
+</RelativeLayout>
