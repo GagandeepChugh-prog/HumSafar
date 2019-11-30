@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         login=findViewById(R.id.login);
         signUp=findViewById(R.id.signUp);
 
+        Intent intent=new Intent(MainActivity.this, BookRide.class);
+        startActivity(intent);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
