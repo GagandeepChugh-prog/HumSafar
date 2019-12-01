@@ -14,7 +14,7 @@ public class Home extends Application {
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
 
         if(firebaseUser!=null){
-            Intent intent=new Intent(Home.this,LandingPageActivity.class);
+            Intent intent=new Intent(Home.this,BookRide.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }

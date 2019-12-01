@@ -67,9 +67,22 @@ public class SignUpActivity extends AppCompatActivity {
                 final String ConfirmPassword=confirmPassword.getText().toString();
                 final String PhoneNumber=phoneNumber.getText().toString();
                 final String SID=sid.getText().toString();
+                if(password.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Please Enter Password",Toast.LENGTH_LONG).show();
+                }else
                 if(!Password.equals(ConfirmPassword)){
                     Toast.makeText(getApplicationContext(),"Password does not match",Toast.LENGTH_LONG).show();
                 }
+                if(email.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Please Enter Email",Toast.LENGTH_LONG).show();
+                }
+                if(phoneNumber.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Please Enter Phone Number",Toast.LENGTH_LONG).show();
+                }
+                if(sid.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Please enter Student Identity Number",Toast.LENGTH_LONG).show();
+                }
+
                 else{
                     mAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
