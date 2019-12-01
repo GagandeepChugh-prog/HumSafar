@@ -65,6 +65,9 @@ public class PhoneNumberVerification extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(PhoneNumberVerification.this,"Student ID Uploaded SuccessFully",Toast.LENGTH_LONG).show();
                     progressDialog.dismiss();
+                    Intent intent=new Intent(PhoneNumberVerification.this,BookRide.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
                 }
             });
 

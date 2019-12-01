@@ -62,7 +62,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Error in Sign In",Toast.LENGTH_LONG).show();
                         }
                         else{
-                            Intent intent=new Intent(LoginActivity.this,LandingPageActivity.class);
+                            Intent intent=new Intent(LoginActivity.this,BookRide.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                 //            finish();
                         }

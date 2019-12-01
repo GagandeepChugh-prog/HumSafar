@@ -15,9 +15,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginRight="103dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
         android:text="Hello Rider!!"
         android:textColor="@android:color/black"
         android:textSize="31dp"
@@ -32,25 +32,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="69dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
         android:ems="10"
         android:hint="Source"
-        android:inputType="textPostalAddress" />
-
-
-    <EditText
-        android:id="@+id/riderDest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/riderSource"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
-        android:ems="10"
-        android:hint="Destination"
         android:inputType="textPostalAddress" />
 
     <EditText
@@ -61,8 +46,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
         android:ems="10"
         android:hint="Date of Travel"
         android:inputType="date" />
@@ -75,8 +60,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
         android:ems="10"
         android:hint="Expected Time to Travel"
         android:inputType="time" />
@@ -89,9 +74,37 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="76dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginRight="150dp"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
         android:background="@drawable/roundedbutton"
         android:text="Search Ride" />
+
+    <EditText
+        android:id="@+id/riderDest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/riderSource"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginRight="103dp"
+        android:ems="10"
+        android:hint="Destination"
+        android:inputType="textPostalAddress" />
+
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Logout" />
 
 </RelativeLayout>
