@@ -15,7 +15,7 @@ public class Home extends Application {
 
         if(firebaseUser!=null){
             Intent intent=new Intent(Home.this,BookRide.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
 
