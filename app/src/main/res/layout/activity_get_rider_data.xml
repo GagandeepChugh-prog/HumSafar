@@ -7,6 +7,21 @@
     tools:context=".activity_get_rider_data"
     android:padding="20dp">
 
+    <TextView
+        android:id="@+id/riderAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="25dp"
+        android:text="Riders Availalble:-"
+        android:textColor="@android:color/black"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
     <ProgressBar
         android:id="@+id/riderProgressBar"
         style="?android:attr/progressBarStyle"
@@ -27,10 +42,12 @@
 
     <ListView
         android:id="@+id/rider_data"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:ignore="MissingConstraints"
+        android:layout_marginTop="60dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
+
 
 </RelativeLayout>
