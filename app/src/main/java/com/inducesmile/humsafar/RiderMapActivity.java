@@ -1,7 +1,9 @@
 package com.inducesmile.humsafar;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,8 +16,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RiderMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -26,6 +31,8 @@ public class RiderMapActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
     LatLng sourceCoordinator,destinationCoordinator;
+
+    String userName="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,7 @@ public class RiderMapActivity extends FragmentActivity implements OnMapReadyCall
         final String rDestination=getIntent().getStringExtra("rDestination");
         final String rDate=getIntent().getStringExtra("rDate");
         final String rTime=getIntent().getStringExtra("rTime");
+        userName=getIntent().getStringExtra("rName");
         LocationChecker locationChecker=new LocationChecker();
         Double[] sourceArray=locationChecker.getLocationFromAddress(RiderMapActivity.this,rSource);
         Double[] destinationArray=locationChecker.getLocationFromAddress(RiderMapActivity.this,rDestination);
@@ -70,6 +78,29 @@ public class RiderMapActivity extends FragmentActivity implements OnMapReadyCall
                 currentuser5.setValue(rDate);
                 DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentRider");
                 currentuser6.setValue("True");
+
+                //to get name of the current user.
+                DatabaseReference getNameOfUser=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
+                getNameOfUser.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        userName=dataSnapshot.child("Name").getValue().toString();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                DatabaseReference currentuser7=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rName");
+                currentuser7.setValue(userName);
+
+                Intent intent=new Intent(RiderMapActivity.this,activity_get_driver_data.class);
+                startActivity(intent);
+
             }
         });
     }

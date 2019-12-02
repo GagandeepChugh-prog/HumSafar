@@ -8,6 +8,34 @@
     tools:context=".SignUpActivity">
 
     <EditText
+        android:id="@+id/email"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="198dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="106dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textEmailAddress" />
+
+    <EditText
         android:id="@+id/password"
         android:layout_width="280dp"
         android:layout_height="55dp"
@@ -16,38 +44,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="280dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/sid"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginLeft="63dp"
-        android:layout_marginTop="466dp"
-        android:ems="8"
-        android:hint="Student Identity Number"
-        android:inputType="phone" />
-
-    <EditText
-        android:id="@+id/phoneNumber"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="379dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="phone" />
 
     <EditText
 
@@ -60,13 +60,13 @@
 
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="364dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/phoneNumber"
         android:layout_width="280dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
@@ -74,10 +74,24 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="455dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:hint="Phone Number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/sid"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="542dp"
+        android:ems="8"
+        android:hint="Student Identity Number"
+        android:inputType="phone" />
 
     <Button
         android:id="@+id/signUp"
@@ -86,9 +100,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="159dp"
-        android:layout_marginLeft="159dp"
-        android:layout_marginTop="578dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="618dp"
         android:background="@drawable/roundedbutton"
         android:text="Sign Up" />
 

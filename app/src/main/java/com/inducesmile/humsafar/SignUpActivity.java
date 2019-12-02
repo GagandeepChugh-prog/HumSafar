@@ -25,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText email,password,confirmPassword, phoneNumber,sid;
+    EditText email,password,confirmPassword, phoneNumber,sid,name;
     Button signUp;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
@@ -54,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         confirmPassword=findViewById(R.id.confirmPassword);
         phoneNumber=findViewById(R.id.phoneNumber);
         sid=findViewById(R.id.sid);
+        name=findViewById(R.id.name);
         signUp=findViewById(R.id.signUp);
 
 
@@ -67,6 +68,8 @@ public class SignUpActivity extends AppCompatActivity {
                 final String ConfirmPassword=confirmPassword.getText().toString();
                 final String PhoneNumber=phoneNumber.getText().toString();
                 final String SID=sid.getText().toString();
+                final String userName=name.getText().toString();
+
                 if(password.getText().toString().length()==0){
                     Toast.makeText(getApplicationContext(),"Please Enter Password",Toast.LENGTH_LONG).show();
                 }else
@@ -80,7 +83,9 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Please Enter Phone Number",Toast.LENGTH_LONG).show();
                 }
                 if(sid.getText().toString().length()==0){
-                    Toast.makeText(getApplicationContext(),"Please enter Student Identity Number",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please Enter Student Identity Number",Toast.LENGTH_LONG).show();
+                }if(name.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"Please Enter Name",Toast.LENGTH_LONG).show();
                 }
 
                 else{
@@ -106,6 +111,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 currentuser5.setValue("False");
                                 DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentRider");
                                 currentuser6.setValue("False");
+                                DatabaseReference currentuser7=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("Name");
+                                currentuser7.setValue(userName);
 
 
 

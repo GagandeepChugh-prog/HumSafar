@@ -1,5 +1,6 @@
 package com.inducesmile.humsafar;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
@@ -15,8 +16,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DriverMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -27,7 +31,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
     private GoogleMap mMap;
     LatLng sourceCoordinator,destinationCoordinator;
-
+    String userName="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +79,29 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
                 currentuser5.setValue(dDate);
                 DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentDriver");
                 currentuser6.setValue("True");
+
+                //to get name of the current user.
+                DatabaseReference getNameOfUser=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
+                getNameOfUser.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        userName=dataSnapshot.child("Name").getValue().toString();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                DatabaseReference currentuser7=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dName");
+                currentuser7.setValue(userName);
+
+                Intent intent=new Intent(DriverMapActivity.this,activity_get_rider_data.class);
+                startActivity(intent);
+
             }
         });
     }
