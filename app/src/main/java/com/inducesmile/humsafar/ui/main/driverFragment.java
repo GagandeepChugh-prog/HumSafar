@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.inducesmile.humsafar.DriverMapActivity;
 import com.inducesmile.humsafar.MainActivity;
 import com.inducesmile.humsafar.PhoneNumberVerification;
 import com.inducesmile.humsafar.R;
@@ -112,24 +113,31 @@ public class driverFragment extends Fragment {
                 if(driverDate.getText().toString().length()==0){
                     Toast.makeText(getActivity(),"Please enter Date",Toast.LENGTH_LONG).show();
                 }
-                else{
-                    String user_id=mAuth.getCurrentUser().getUid();
-                    DatabaseReference current_user_db= FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id);
-                    current_user_db.setValue(true);
-                    DatabaseReference currentuser1=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dSource");
-                    currentuser1.setValue(driverSources);
-                    DatabaseReference currentuser2=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dDestination");
-                    currentuser2.setValue(driverDests);
-                    DatabaseReference currentuser3=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dTime");
-                    currentuser3.setValue(driverTimes);
-                    DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dSeats");
-                    currentuser4.setValue(driverSeats);
-                    DatabaseReference currentuser5=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dDate");
-                    currentuser5.setValue(driverDates);
-                    DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentDriver");
-                    currentuser6.setValue("True");
 
-                    Intent intent=new Intent(getActivity(), SignUpActivity.class);
+                else{
+//                    String user_id=mAuth.getCurrentUser().getUid();
+//                    DatabaseReference current_user_db= FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id);
+//                    current_user_db.setValue(true);
+////                    DatabaseReference currentuser1=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dSource");
+////                    currentuser1.setValue(driverSources);
+////                    DatabaseReference currentuser2=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dDestination");
+////                    currentuser2.setValue(driverDests);
+//                    DatabaseReference currentuser3=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dTime");
+//                    currentuser3.setValue(driverTimes);
+//                    DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dSeats");
+//                    currentuser4.setValue(driverSeats);
+//                    DatabaseReference currentuser5=FirebaseDatabase.getInstance().getReference().child("Driver").child(user_id).child("dDate");
+//                    currentuser5.setValue(driverDates);
+////                    DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentDriver");
+////                    currentuser6.setValue("True");
+
+                    Intent intent=new Intent(getActivity(), DriverMapActivity.class);
+                    intent.putExtra("dSource",driverSources);
+                    intent.putExtra("dDestination",driverDests);
+                    intent.putExtra("dSeat",driverSeats);
+                    intent.putExtra("dDate",driverDates);
+                    intent.putExtra("dTime",driverTimes);
+
                     startActivity(intent);
                     ((Activity) getActivity()).overridePendingTransition(0, 0);
                 }

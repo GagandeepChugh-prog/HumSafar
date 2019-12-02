@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.inducesmile.humsafar.LandingPageActivity;
 import com.inducesmile.humsafar.MainActivity;
 import com.inducesmile.humsafar.R;
+import com.inducesmile.humsafar.RiderMapActivity;
 import com.inducesmile.humsafar.SignUpActivity;
 
 
@@ -115,23 +116,27 @@ public class riderFragment extends Fragment {
                     Toast.makeText(getActivity(),"Please enter Date",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    String user_id=mAuth.getCurrentUser().getUid();
-                    DatabaseReference current_user_db= FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id);
-                    current_user_db.setValue(true);
-                    DatabaseReference currentuser1=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rSource");
-                    currentuser1.setValue(riderSources);
-                    DatabaseReference currentuser2=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rDestination");
-                    currentuser2.setValue(riderDests);
-                    DatabaseReference currentuser3=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rTime");
-                    currentuser3.setValue(riderTimes);
-//                    DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("StudentIdentityNumber");
-//                    currentuser4.setValue(driverSeats);
-                    DatabaseReference currentuser5=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rDate");
-                    currentuser5.setValue(riderDates);
-                    DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentRider");
-                    currentuser6.setValue("True");
+//                    String user_id=mAuth.getCurrentUser().getUid();
+//                    DatabaseReference current_user_db= FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id);
+//                    current_user_db.setValue(true);
+////                    DatabaseReference currentuser1=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rSource");
+////                    currentuser1.setValue(riderSources);
+////                    DatabaseReference currentuser2=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rDestination");
+////                    currentuser2.setValue(riderDests);
+//                    DatabaseReference currentuser3=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rTime");
+//                    currentuser3.setValue(riderTimes);
+////                    DatabaseReference currentuser4=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("StudentIdentityNumber");
+////                    currentuser4.setValue(driverSeats);
+//                    DatabaseReference currentuser5=FirebaseDatabase.getInstance().getReference().child("Rider").child(user_id).child("rDate");
+//                    currentuser5.setValue(riderDates);
+//                    DatabaseReference currentuser6=FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("CurrentRider");
+//                    currentuser6.setValue("True");
 
-                    Intent intent=new Intent(getActivity(), SignUpActivity.class);
+                    Intent intent=new Intent(getActivity(), RiderMapActivity.class);
+                    intent.putExtra("rSource",riderSources);
+                    intent.putExtra("rDestination",riderDests);
+                    intent.putExtra("rTime",riderTimes);
+                    intent.putExtra("rDate",riderDates);
                     startActivity(intent);
                     ((Activity) getActivity()).overridePendingTransition(0, 0);
                 }
